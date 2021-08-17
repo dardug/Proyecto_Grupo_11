@@ -59,7 +59,7 @@ ROOT_URLCONF = 'Proyecto2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:/pildorasinf/Proyecto tienda/Tienda_online/Proyecto2/Templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
