@@ -78,16 +78,7 @@ WSGI_APPLICATION = 'Proyecto2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tienda_online',
-        'USER': 'postgres',
-        'PASSWORD': '0314549',
-        'HOST':'localhost',
-        'PORT':'5432',
-    }
-}
+
 
 
 # Password validation
