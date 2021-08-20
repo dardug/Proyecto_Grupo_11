@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from django.urls import reverse_lazy
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -29,7 +31,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'Usuarios.User'
-
+LOGIN_REDIRECT_URL=reverse_lazy('principal')
+LOGIN_URL=reverse_lazy('login')
 
 # Application definition
 
@@ -59,7 +62,7 @@ ROOT_URLCONF = 'Proyecto2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/pildorasinf/Proyecto tienda/Tienda_online/Proyecto2/Templates'],
+        'DIRS': ['Templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
