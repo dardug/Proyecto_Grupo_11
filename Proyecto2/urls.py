@@ -17,11 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path,include
-from . import views
+from Proyecto2.views import inicio,login,nuevo_usuario,Listar,juego
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('inicio/',views.inicio, name="principal"),
+    path('inicio/',inicio, name="principal"),
     path('login/',auth_views.LoginView.as_view(template_name="login.html"),name="login"),
-    path('logout/',auth_views.logout_then_login, name="logout")
+    path('logout/',auth_views.logout_then_login, name="logout"),
+    path('Nuevo/',nuevo_usuario, name="Registrarse"),
+    path('Listar/',Listar.as_view(), name="listar"),
+    path('Juego/',juego, name="juego")    
 ]
+#path('Listar/',Listar.as_view(), name="listar")

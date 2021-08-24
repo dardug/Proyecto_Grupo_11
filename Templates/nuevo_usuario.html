@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<div class="album py-5 bg-light">
+
+	<div class="container">
+
+    	<div class="row">
+            
+        	<div class="col">
+        		<h1>Registrarse</h1>
+        		<form method="POST">{% csrf_token %}
+
+        			{{form.as_p}}
+
+        			<button type="submit" class="btn btn-primary">Guardar</button>
+				  	
+				</form>
+        			
+        	</div>
+   		</div>
+	</div>
+</div>
+
+
+{% endblock contenido %}
