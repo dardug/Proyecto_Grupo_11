@@ -11,7 +11,7 @@
         	<div class="col">
         		<h1>Responde a la Trivia</h1>
         		<div align="center " id="displaytimer"><b>Tiempo: 0 seconds</b></div>
-        		<form method="POST" action=''>{% csrf_token %}
+        		<form method='POST' action=''>{% csrf_token %}
 
         			{% for q  in preguntas%}
 				    <div class="form-group">
@@ -19,26 +19,26 @@
 				    </div>
 				    	<div class="form-check">
 				        	<div class="form-check">
-				            	<input class="form-check-input" type="radio" name="{{q.pregunta}}" id="gridRadios1" value="opción1" checked>
+				            	<input class="form-check-input" type="radio" name="{{q.pregunta}}" id="gridRadios1" value="{{q.opción1}}" checked>
 				            	<label class="form-check-label" for="gridRadios1">
 				                	{{q.opción1}}
 				            	</label>
 				        </div>
 				        <div class="form-check">
-					            <input class="form-check-input" type="radio" name="{{q.pregunta}}" id="gridRadios2" value="opción2">
+					            <input class="form-check-input" type="radio" name="{{q.pregunta}}" id="gridRadios2" value="{{q.opción2}}" checked>
 					            <label class="form-check-label" for="gridRadios2">
 				                	{{q.opción2}}
 				            	</label>
 				        </div>
 				        <div class="form-check">
-					            <input class="form-check-input" type="radio" name="{{q.pregunta}}" id="gridRadios1" value="opción3">
-					            <label class="form-check-label" for="gridRadios1">
+					            <input class="form-check-input" type="radio" name="{{q.pregunta}}" id="gridRadios1" value="{{q.opción3}}" checked>
+					            <label class="form-check-label" for="gridRadios3">
 				                	{{q.opción3}}
 				            	</label>
 				        </div>
 				        <div class="form-check">
-					            <input class="form-check-input" type="radio" name="{{q.pregunta}}" id="gridRadios2" value="q.opción4">
-					            <label class="form-check-label" for="gridRadios2">
+					            <input class="form-check-input" type="radio" name="{{q.pregunta}}" id="gridRadios2" value="{{q.opción4}}" checked>
+					            <label class="form-check-label" for="gridRadios4">
 				                	{{q.opción4}}
 				            </label>
 				        </div>
@@ -48,8 +48,8 @@
 				    <input id='timer' type='hidden' name="timer" value="">
     				<br>
     				<button type="submit" class="btn btn-primary">Enviar</button>
-    			<form>
-				     {% block script %}
+    			</form>
+				    {% block script %}
 				        <script>
 				 
 				            console.log('hello world')

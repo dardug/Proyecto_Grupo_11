@@ -44,22 +44,31 @@ class Listar(LoginRequiredMixin,ListView):
 def juego(request):
     if request.method == 'POST':
         print(request.POST)
+        x=request.POST
+        #print(x)
+        #str(adad)
         preguntas=Pregunta.objects.all()
         puntaje=0
         incorrecto=0
         correcto=0
-        total=0
+        total=0          
+        #str(dasda)
         for q in preguntas:
             total+=1
-            print(request.POST.get(q.pregunta))
-            print(q.respuesta_correcta)
-            print()
-            if q.respuesta_correcta ==  request.POST.get(q.pregunta):
+            y=q.respuesta_correcta
+            z=request.POST.get(q.pregunta)
+            print(z)         
+            print(y)
+
+            #str(asa)
+            if q.respuesta_correcta ==request.POST.get(q.pregunta):
                 puntaje+=10
                 correcto+=1
+
             else:
                 incorrecto+=1
-        porcentaje = puntaje/(total*10) *100
+        #str(asdfasd)
+        porcentaje = (puntaje/(total*10))*100       
         context = {
             'puntaje':puntaje,
             'time': request.POST.get('timer'),
@@ -67,7 +76,8 @@ def juego(request):
             'incorrecto':incorrecto,
             'porcentaje':porcentaje,
             'total':total
-        }
+            }
+        
         return render(request,'resultados.html',context)
     else:
         preguntas=Pregunta.objects.all()

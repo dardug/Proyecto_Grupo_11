@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "preguntas.html" %}
 
 {% block contenido %}
 
@@ -8,20 +8,19 @@
         <div class="card" align="centre " style="width: 32rem; border:5px black solid">
             <img class="card-img-top" src="http://www.cuarq.org/web/cuarq2/assets/images/trabajar-y-dar-resultados-1400x651.jpg" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Puntaje: {{Puntaje}}</h5>
+                <h5 class="card-title">Puntaje: {{puntaje}}</h5>
  
-                <p class="card-text">Porcentaje: {{Porcentaje}}%</p>
-                <p class="card-text">Time Taken: {{time}} seconds</p>
+                <p class="card-text">Porcentaje: {{porcentaje}}%</p>
+                <p class="card-text">Tiempo: {{time}} seconds</p>
                 <p class="card-text">Respuestas correctas: {{correcto}}</p>
-                <p class="card-text">Respuestas incorrectas: {{incorrectas}}</p>
+                <p class="card-text">Respuestas incorrectas: {{incorrecto}}</p>
                 <p class="card-text">Total de preguntas: {{total}}</p>
-                <h5>All the best for next quiz!</h5>
+                <h5>Excelente!</h5>
             </div>
         </div>
     </div>
  
 </div>
-
 
 
 {% endblock contenido %}
