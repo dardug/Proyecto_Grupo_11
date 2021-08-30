@@ -82,8 +82,12 @@ El territorio nacional del Chaco para 1920 ya había cumplido con la exigencia i
             <p>
               <a href="{% url 'login' %}" class="btn btn-primary my-2">Iniciar Sesion</a>
               <!--<a href="#" class="btn btn-secondary my-2">Secondary action</a>-->
-              <a href="{% url 'login' %}" class="btn btn-primary my-2">Registrarse</a>
+              <a href="{% url 'Registrarse' %}" class="btn btn-primary my-2">Registrarse</a>
               <!--<a href="#" class="btn btn-secondary my-2">Secondary action</a>-->
+              {% else %}
+              <a href="{% url 'juego' %}" class="btn btn-primary my-2">A jugar!!</a>
+              <!--<a href="#" class="btn btn-secondary my-2">Secondary action</a>-->
+
             </p>
 
           {% endif %}
@@ -100,8 +104,8 @@ El territorio nacional del Chaco para 1920 ya había cumplido con la exigencia i
         <p class="float-right">
           <a href="#">Back to top</a>
         </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+        <p>Sitio elaborado por el grupo N°11 del Informatorio</p>
+        <p>¿Queres aprender a programar? Vista el sitio del <a href="https://empleo.chaco.gob.ar/informatorio#/">INFORMATORIO</a> 
       </div>
     </footer>
 

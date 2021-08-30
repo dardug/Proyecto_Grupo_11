@@ -12,8 +12,8 @@
         		<h1>Responde a la Trivia</h1>
         		<div align="center " id="displaytimer"><b>Tiempo: 0 seconds</b></div>
         		<form method='POST' action=''>{% csrf_token %}
-
-        			{% for q  in preguntas%}
+					
+        			{% for q  in preguntas %}
 				    <div class="form-group">
 				    	<label for="question">{{q.pregunta}}</label>
 				    </div>

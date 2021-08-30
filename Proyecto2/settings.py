@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'Usuarios.User'
 LOGIN_REDIRECT_URL=reverse_lazy('principal')
-LOGIN_URL=reverse_lazy('login')
+LOGIN_URL=reverse_lazy('principal')
 
 # Application definition
 
