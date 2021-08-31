@@ -3,9 +3,10 @@
 {% block contenido %}
 
 <div class="container ">
-        
+
+       
     <div class="card-columns" style="padding: 10px; margin: 20px;">
-        <div class="card" align="centre " style="width: 32rem; border:5px black solid">
+        <div class="card" align="centre " style="width: 32rem; border:5px red solid">
             <img class="card-img-top" src="http://www.cuarq.org/web/cuarq2/assets/images/trabajar-y-dar-resultados-1400x651.jpg" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Puntaje: {{puntaje}}</h5>
@@ -17,6 +18,8 @@
                 <p class="card-text">Total de preguntas: {{total}}</p>               
                 <h5>Excelente!</h5>
                 <a href="{% url 'principal' %}" class="btn btn-primary my-2">Volver al inicio</a>
+                <!--<a href="#" class="btn btn-secondary my-2">Secondary action</a>-->
+                <a href="{% url 'juego' %}" class="btn btn-primary my-2">Volver a intentar</a>
                 <!--<a href="#" class="btn btn-secondary my-2">Secondary action</a>-->
 
             </div>

@@ -46,6 +46,7 @@ El territorio nacional del Chaco para 1920 ya había cumplido con la exigencia i
                 {% if user.is_authenticated %}
                 
                   <li><a href="{% url 'logout' %}" class="text-white">Cerrar Sesión</a></li>
+                  <li><a href="{% url 'juego' %}" class="text-white">Juga a la Trivia</a></li>
 
                 {% else %}
 
@@ -96,7 +97,7 @@ El territorio nacional del Chaco para 1920 ya había cumplido con la exigencia i
     <footer class="text-muted">
       <div class="container">
         <p class="float-right">
-          <a href="#">Volver al comienz</a>
+          <a href="#">Volver al comienzo</a>
         </p>
         <p>Sitio elaborado por el grupo N°11 del Informatorio</p>
         <p>¿Queres aprender a programar? Vista el sitio del <a href="https://empleo.chaco.gob.ar/informatorio#/">INFORMATORIO</a> 
