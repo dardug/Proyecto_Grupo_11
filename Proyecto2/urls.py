@@ -28,6 +28,18 @@ urlpatterns = [
     path('logout/',auth_views.logout_then_login, name="logout"),
     path('Nuevo/',nuevo_usuario, name="Registrarse"),
     path('Listar/',Listar.as_view(), name="listar"),
-    path('Juego/',juego, name="juego")    
+    path('Juego/',juego, name="juego")   
 ]
 #path('Listar/',Listar.as_view(), name="listar")
+
+
+"""
+
+    path('inicio/',inicio, name="principal"),
+    path('login/',auth_views.LoginView.as_view(template_name="login.html"),name="login"),
+    path('logout/',auth_views.logout_then_login, name="logout"),
+    path('Nuevo/',nuevo_usuario, name="Registrarse"),
+    path('Listar/',Listar.as_view(), name="listar"),
+    path('Juego/',juego, name="juego")
+
+"""

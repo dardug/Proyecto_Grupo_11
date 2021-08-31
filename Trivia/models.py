@@ -12,8 +12,6 @@ class Pregunta(models.Model):
     
     #fecha_publicacion = models.DateTimeField('fecha de publicacion', auto_now=True)
 
-    def aleatorio(self):
-        return random.shuffle(self.pregunta)
 
     
     def __str__(self):

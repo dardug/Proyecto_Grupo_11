@@ -7,6 +7,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from Usuarios.models import User
 from Trivia.models import Pregunta
 import random
+from django.contrib.auth.forms import UserCreationForm  
+from django.contrib import messages 
 
 def inicio(request):
 	template_name="inicio.html"
@@ -14,27 +16,66 @@ def inicio(request):
 	return render(request,template_name,ctx)
 
 def login(request):
-	template_name="login.html"
-	ctx={}
-	return render(request,template_name,ctx)
+    template_name="login.html"
+    if request.method=="POST":
 
+        
+        ctx={}
+        return render(request,template_name,ctx)
+        
+
+"""
 def nuevo_usuario(request):
     template_name="nuevo_usuario.html"
     if request.method=='POST':
         first_name=request.POST.get("first_name",None)
         last_name=request.POST.get("last_name",None)
-        email=request.POST.get("email",None)
-        username=request.POST.get("username",None)
+        #email=request.POST.get("email",None)
+        #username=request.POST.get("username",None)
         password=request.POST.get("password",None)
-        a=User.objects.create(first_name=first_name,last_name=last_name,email=email,username=username,password=password)
+        #password2=request.POST.get("password1",None)
+
+        a=User.objects.create(first_name=first_name,last_name=last_name,password=password)
         return redirect('principal')
     ctx={'form':usuario_form()}
     return render(request,template_name,ctx)
+"""
+"""
+def nuevo_usuario(request):
+    template_name="nuevo_usuario.html"
+    if request.POST == 'POST':
+        
+          
+        form = usuario_form()
+        if form.is_valid():
+            user=form.save()  
+            return redirect('login') 
+  
+    else:  
+        form = usuario_form()
 
 
 
+    ctx = {  
+            'form':form  
+        }  
+    return render(request,template_name,ctx)  
 
-
+"""
+def nuevo_usuario(request):
+    if request.user.is_authenticated:
+        return redirect('home') 
+    else: 
+        form = usuario_form()
+        if request.method=='POST':
+            form = usuario_form(request.POST)
+            if form.is_valid() :
+                form.save()
+                return redirect('login')
+    ctx = {  
+            'form':form  
+        }  
+    return render(request,"nuevo_usuario.html",ctx) 
 
 class Listar(LoginRequiredMixin,ListView):
 	
@@ -76,7 +117,7 @@ def juego(request):
 
             else:
                 incorrecto+=1
-        str(asdfasd)
+        #str(asdfasd)
         porcentaje = (puntaje/(total*10))*100       
         context = {
             'puntaje':puntaje,
