@@ -24,44 +24,7 @@ def login(request):
         return render(request,template_name,ctx)
         
 
-"""
-def nuevo_usuario(request):
-    template_name="nuevo_usuario.html"
-    if request.method=='POST':
-        first_name=request.POST.get("first_name",None)
-        last_name=request.POST.get("last_name",None)
-        #email=request.POST.get("email",None)
-        #username=request.POST.get("username",None)
-        password=request.POST.get("password",None)
-        #password2=request.POST.get("password1",None)
 
-        a=User.objects.create(first_name=first_name,last_name=last_name,password=password)
-        return redirect('principal')
-    ctx={'form':usuario_form()}
-    return render(request,template_name,ctx)
-"""
-"""
-def nuevo_usuario(request):
-    template_name="nuevo_usuario.html"
-    if request.POST == 'POST':
-        
-          
-        form = usuario_form()
-        if form.is_valid():
-            user=form.save()  
-            return redirect('login') 
-  
-    else:  
-        form = usuario_form()
-
-
-
-    ctx = {  
-            'form':form  
-        }  
-    return render(request,template_name,ctx)  
-
-"""
 def nuevo_usuario(request):
     if request.user.is_authenticated:
         return redirect('home') 
@@ -88,8 +51,7 @@ def juego(request):
     if request.method == 'POST':
         print(request.POST)
         x=request.POST
-        #print(x)
-        #str(adad)
+
         
         preguntas=Pregunta.objects.all()
         print(preguntas)
@@ -98,11 +60,10 @@ def juego(request):
         incorrecto=0
         correcto=0
         total=0          
-        #str(dasda)
+
         for q in preguntas:
             total+=1
-            #a=list()
-            #s=append(q)
+
             y=q.respuesta_correcta
             z=request.POST.get(q.pregunta)
             w=q
@@ -110,14 +71,14 @@ def juego(request):
             print(y)
             print(q)
 
-            #str(asa)
+
             if q.respuesta_correcta ==request.POST.get(q.pregunta):
                 puntaje+=10
                 correcto+=1
 
             else:
                 incorrecto+=1
-        #str(asdfasd)
+
         porcentaje = (puntaje/(total*10))*100       
         context = {
             'puntaje':puntaje,
